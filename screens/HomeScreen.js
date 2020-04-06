@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 
 
-class Home extends Component {
+
+class HomeScreen extends Component {
     render() {
         return (
-            <View>
-                <Text>Home</Text>
+            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', fontWeight: 'bold' }}>
+                <Image
+                    source={require('../assets/smiley.png')} style={{width: 200, height: 200}}
+                />
+                <Text style = {{ color: 'black', fontSize: 65}}>I need a mask</Text>
             </View>
         );
     }
@@ -14,4 +18,4 @@ class Home extends Component {
 
 
 
-export default Home;
+export default HomeScreen;
