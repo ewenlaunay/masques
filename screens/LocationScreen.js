@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {SearchBar} from "react-native-elements";
+import {View} from 'react-native'
+
 
 
 class LocationScreen extends Component {
@@ -8,18 +10,21 @@ class LocationScreen extends Component {
     };
 
     updateSearch = search => {
-        this.setState({ search });
+        this.setState({search});
     };
 
     render() {
-        const { search } = this.state;
+        const {search} = this.state;
 
         return (
-            <SearchBar
-                placeholder="Rechercher"
-                onChangeText={this.updateSearch}
-                value={search}
-            />
+            <View style={{marginTop: 35}}>
+                <SearchBar
+                    placeholder="Rechercher"
+                    onChangeText={this.updateSearch}
+                    value={search}
+                />
+
+            </View>
         );
     }
 }
