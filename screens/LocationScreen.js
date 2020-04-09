@@ -1,32 +1,27 @@
 import React, {Component} from 'react';
-import {SearchBar} from "react-native-elements";
-import {View} from 'react-native'
+import {Header} from "react-native-elements";
+import {createStackNavigator} from '@react-navigation/stack';
+import ListPharmacieContainer from "../containers/ListPharmacieContainer";
+import {View} from "react-native";
+import LocationScreen2 from "./LocationScreen2";
+import DetailScreen from "./DetailScreen";
+import DetailScreen2 from "./DetailScreen2";
 
 
 
-class LocationScreen extends Component {
-    state = {
-        search: '',
-    };
+const Stack = createStackNavigator();
 
-    updateSearch = search => {
-        this.setState({search});
-    };
-
+class Search extends Component {
     render() {
-        const {search} = this.state;
-
         return (
-            <View style={{marginTop: 35}}>
-                <SearchBar
-                    placeholder="Rechercher"
-                    onChangeText={this.updateSearch}
-                    value={search}
-                />
+            <Stack.Navigator>
+                <Stack.Screen name={'LocationScreen2'} component={LocationScreen2}/>
+                <Stack.Screen name={'DetailScreen'} component={DetailScreen}/>
+                <Stack.Screen name={'DetailScreen2'} component={DetailScreen2}/>
+            </Stack.Navigator>
 
-            </View>
         );
     }
 }
 
-export default LocationScreen;
+export default Search;

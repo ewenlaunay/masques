@@ -1,6 +1,10 @@
-import { PHARMACIE_REQUEST, PHARMACIE_SUCCESS, PHARMACIE_FAILURE  } from "../action";
+import {
+    PHARMACIE_REQUEST,
+    PHARMACIE_SUCCESS,
+    PHARMACIE_FAILURE
+} from "../action/pharmacies";
 
-const initialState = { items: [] };
+const initialState = { pharmacies: [] };
 
 function pharmacie(state = initialState, action) {
     switch(action.type) {
@@ -9,7 +13,7 @@ function pharmacie(state = initialState, action) {
         case PHARMACIE_SUCCESS:
             return {
                 ...state,
-                pharmacies: action.payload.pharmacies,
+                pharmacies: action.payload,
                 loading: false
             };
         case PHARMACIE_FAILURE:
